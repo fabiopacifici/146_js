@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Train Ticket Form</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+  <form id="ticket-form" class="bg-white p-8 rounded shadow-md w-full max-w-md space-y-4">
+    <label for="passenger-name" class="block text-gray-700 font-semibold">Passenger Name:</label>
+    <input type="text" id="passenger-name" name="passenger-name" required
+      class="w-full border rounded px-3 py-2 mb-2" />
+
+    <label for="kilometers" class="block text-gray-700 font-semibold">Kilometers:</label>
+    <input type="number" id="kilometers" name="kilometers" min="1" required
+      class="w-full border rounded px-3 py-2 mb-2" />
+
+    <label for="age-group" class="block text-gray-700 font-semibold">Age Group:</label>
+    <select id="age-group" name="age-group" required class="w-full border rounded px-3 py-2 mb-2">
+      <option value="adult">Adult</option>
+      <option value="minor">Minor</option>
+      <option value="senior">Senior</option>
+    </select>
+
+    <div class="flex gap-4">
+      <button type="submit" class="flex-1 bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">Generate
+        Ticket</button>
+      <button type="button" id="reset-btn"
+        class="flex-1 bg-gray-400 text-white py-2 rounded hover:bg-gray-500 transition">Reset</button>
+    </div>
+  </form>
+
+  <!-- Ticket Card -->
+  <div id="ticket-card" class="hidden mt-8 bg-white rounded shadow-lg p-6 w-full max-w-lg">
+    <h2 class="text-2xl font-bold mb-4 text-blue-700">Train Ticket</h2>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <div class="font-semibold text-gray-600">Passenger Name</div>
+        <div id="card-passenger-name" class="mb-2"></div>
+      </div>
+      <div>
+        <div class="font-semibold text-gray-600">Wagon Number</div>
+        <div id="card-wagon" class="mb-2"></div>
+      </div>
+      <div>
+        <div class="font-semibold text-gray-600">CP Code</div>
+        <div id="card-cp-code" class="mb-2"></div>
+      </div>
+      <div>
+        <div class="font-semibold text-gray-600">Discount Type</div>
+        <div id="card-discount-type" class="mb-2"></div>
+      </div>
+      <div class="col-span-2">
+        <div class="font-semibold text-gray-600">Full Price</div>
+        <div id="card-full-price" class="mb-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
